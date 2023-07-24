@@ -15,7 +15,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.util.ResourceBundle;
 public class TestSteps {
 	WebDriver driver;
-	ShoppingPage sp;String output1;String output2;
+	ShoppingPage sp;String output1;String output2;ShopingPage2 sp2;
 	Logger logger;ResourceBundle rb;String br;List<HashMap<String,String>> datamap;
 	
 	
@@ -54,12 +54,12 @@ public class TestSteps {
 	}
 	@When("click on the women label")
 	public void click_on_the_women_label() {
-	    sp=new ShoppingPage(driver);sp.womenclick();
+	    sp2=new ShopingPage2(driver);sp2.womenclick();
 	}
 
 	@When("click on the T-shirt")
-	public void click_on_the_t_shirt() {
-	    sp.Tshirtclick();
+	public void click_on_the_t_shirt() {sp2=new ShopingPage2(driver);
+	    sp2.Tshirtclick();
 	}
 
 	@When("check the T-shirt name")
@@ -83,6 +83,42 @@ public class TestSteps {
 	public void validate_the_both_shirt_names() {
 	    if(output1.equals(output2)) {System.out.println("both are equal");}else {System.out.println("both are not equal");}
 	}
+	@When("click on the more")
+	public void click_on_the_more() {
+	    sp2.moreClick();
+	}
+
+	@When("click on the quantity")
+	public void click_on_the_quantity() {
+	    sp2.increaseClick();
+	}
+
+	@When("click on the size")
+	public void click_on_the_size() {
+	    sp2.sizeclick();
+	}
+
+	@When("click on the color")
+	public void click_on_the_color() {
+	   sp2.colorclick();
+	}
+
+	@When("click on the add to cart")
+	public void click_on_the_add_to_cart() {
+	    sp2.addtocartclick();sp2.closeclick();
+	}
+
+	@When("click on the cart symbol")
+	public void click_on_the_cart_symbol() {
+	    sp2.shoppingclick();
+	}
+
+	@When("click on the proced to checkout")
+	public void click_on_the_proced_to_checkout() {
+	    sp2.proceed();
+	}
+
+
 
 
 
